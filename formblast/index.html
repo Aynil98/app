@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>FORMBLAST</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-aabb-collider-component@3.1.0/dist/aframe-aabb-collider-component.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+  </head>
+
+  <body>
+    
+    <!-- ESCENA -->  
+    <a-scene webxr="requiredFeatures: dom-overlay, local-floor, hit-test; overlayElement: #overlay;">
+
+      <!-- Jugador -->
+      <a-camera>
+        <a-box id="player" aabb-collider="objects: .enemigo" scale="0.5 0.5 0.5"></a-box>
+      </a-camera>
+
+
+      <!-- Sonidos -->
+      <a-assets>
+        <audio id="bomb" src="sounds/bomb.mp3" preload="auto"></audio>
+        <audio id="gameover" src="sounds/gameover.mp3" preload="auto"></audio>
+        <audio id="loselife" src="sounds/loselife.mp3" preload="auto"></audio>
+        <audio id="reload" src="sounds/reload.mp3" preload="auto"></audio>
+        <audio id="shot" src="sounds/shot.mp3" preload="auto"></audio>
+      </a-assets>
+      
+      <a-entity id="bombE" sound="src: #bomb; poolSize: 10"></a-entity>
+      <a-entity id="gameoverE" sound="src: #gameover; poolSize: 1"></a-entity>
+      <a-entity id="loselifeE" sound="src: #loselife; poolSize: 3"></a-entity>
+      <a-entity id="reloadE" sound="src: #reload; poolSize: 2"></a-entity>
+      <a-entity id="shotE" sound="src: #shot; poolSize: 10"></a-entity>
+    
+
+    </a-scene>
+
+
+  
+    <!-- OVERLAY -->
+    <div id="overlay"> 
+      <div id='puntuacion' class="unselectable"> 
+        <span>Puntuación:&nbsp;</span>
+        <span id='puntuacionContador'>0</span>
+      </div>
+
+      <div id='vidas' class="unselectable"> 
+        <span>Vidas:&nbsp;</span>
+        <span id='vidasContador'>3</span>
+      </div>
+
+      <div id='disparos' class="unselectable"> 
+        <span>Disparos:&nbsp;</span>
+        <span id='disparosContador'>10</span>
+      </div>
+      
+      <button id='jugar' class="unselectable pausa">Jugar</button>
+
+      <button id='recargar' class="unselectable">Recargar!</button>
+    </div>
+
+
+  <script src="script.js"></script>
+
+  </body>
+</html>

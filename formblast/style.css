@@ -1,0 +1,89 @@
+#overlay {
+  visibility: hidden;
+}
+
+#puntuacion {
+  visibility: hidden; 
+  position: absolute;
+  top: 30px;
+  left: 25%;
+  width: 200px;
+  height: 40px;
+  background-color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#vidas {
+  visibility: hidden; 
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  width: 150px;
+  height: 40px;
+  background-color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#disparos {
+  visibility: hidden; 
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 150px;
+  height: 40px;
+  background-color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#jugar {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  top: 50%;
+  left: 25%;
+  background-color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#recargar {
+  visibility: hidden; 
+  position: absolute;
+  bottom: 80px;
+  right: 15px;
+  width: 150px;
+  height: 40px;
+  background-color: rgb(216, 117, 70);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#puntuacionContador, #vidasContador, #disparosContador {
+  font-weight: bold;
+}
+
+*.unselectable {
+  -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+
+   /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
+}
